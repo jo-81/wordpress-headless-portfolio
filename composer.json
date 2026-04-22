@@ -23,8 +23,8 @@
         "symfony/var-dumper": "^7.1"
     },
     "scripts": {
-        "lint":     "phpcs --standard=WordPress src/",
-        "lint:fix": "phpcbf --standard=WordPress src/"
+        "lint":     "phpcs src/",
+        "lint:fix": "phpcbf src/"
     },
     "config": {
         "allow-plugins": {
