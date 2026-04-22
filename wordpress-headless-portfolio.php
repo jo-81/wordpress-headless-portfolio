@@ -26,3 +26,8 @@ define( 'PORTFOLIO_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'PORTFOLIO_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
 
 require_once PORTFOLIO_PLUGIN_DIR . 'vendor/autoload.php';
+
+// Démarrage du plugin
+add_action('plugins_loaded', static function (): void {
+    \PortfolioHeadless\Plugin::get_instance()->run();
+});

@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<ruleset name="Portfolio Headless">
+    <description>PHPCS configuration for a WordPress plugin using Composer PSR-4.</description>
+
+    <file>src</file>
+    <file>tests</file>
+
+    <exclude-pattern>vendor/*</exclude-pattern>
+    <exclude-pattern>node_modules/*</exclude-pattern>
+    <exclude-pattern>assets/*.min.js</exclude-pattern>
+    <exclude-pattern>assets/*.min.css</exclude-pattern>
+
+    <arg name="basepath" value="."/>
+    <arg name="extensions" value="php"/>
+
+    <rule ref="WordPress">
+        <exclude name="WordPress.Files.FileName"/>
+        <exclude name="WordPress.Files.FileName.NotHyphenatedLowercase"/>
+        <exclude name="WordPress.Files.FileName.InvalidClassFileName"/>
+        <exclude name="WordPress.Commenting.FileComment.Missing"/>
+        <exclude name="WordPress.Commenting.FileComment.MissingPackageTag"/>
+        <exclude name="Squiz.Commenting.FileComment.Missing"/>
+        <exclude name="Squiz.Commenting.FileComment.MissingPackageTag"/>
+    </rule>
+
+    <rule ref="WordPress-Docs"/>
+    <rule ref="WordPress-Extra"/>
+
+    <rule ref="Generic.Commenting.Todo"/>
+    <rule ref="Generic.CodeAnalysis.UnusedFunctionParameter"/>
+
+    <config name="minimum_supported_wp_version" value="6.4"/>
+</ruleset>
