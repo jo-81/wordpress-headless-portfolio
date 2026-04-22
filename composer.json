@@ -30,7 +30,11 @@
     "scripts": {
         "lint":     "phpcs src/",
         "lint:fix": "phpcbf src/",
-        "phpstan": "phpstan analyse --memory-limit=1G --ansi"
+        "phpstan": "phpstan analyse --memory-limit=1G --ansi",
+        "check": [
+            "@lint",
+            "@phpstan"
+        ]
     },
     "config": {
         "allow-plugins": {
